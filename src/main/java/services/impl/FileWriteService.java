@@ -23,8 +23,6 @@ public class FileWriteService implements WriteService {
                 bufferedWriter.write(column.toString());
                 bufferedWriter.newLine();
             }
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

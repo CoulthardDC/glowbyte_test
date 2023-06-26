@@ -1,11 +1,9 @@
 package model;
 
-import java.util.List;
-
 public class Table {
 
     private String tableName;
-    private List<String> pkList;
+    private String pkList;
 
     public String getTableName() {
         return tableName;
@@ -15,11 +13,11 @@ public class Table {
         this.tableName = tableName;
     }
 
-    public List<String> getPkList() {
+    public String getPkList() {
         return pkList;
     }
 
-    public void setPkList(List<String> pkList) {
+    public void setPkList(String pkList) {
         this.pkList = pkList;
     }
 

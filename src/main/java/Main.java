@@ -11,7 +11,6 @@ import services.impl.FileWriteService;
 import services.impl.TableServiceImpl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -58,11 +57,11 @@ public class Main {
         List<Table> tables = new ArrayList<>();
         Table table = new Table();
         table.setTableName("users");
-        table.setPkList(Arrays.asList("ID"));
+        table.setPkList("ID");
         tables.add(table);
         table = new Table();
         table.setTableName("accounts");
-        table.setPkList(Arrays.asList("account, account_id"));
+        table.setPkList("account, account_id");
         tables.add(table);
         return tables;
     }

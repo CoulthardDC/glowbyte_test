@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BaseDao {
-    private Connection connection;
+    private final Connection connection;
 
     public  BaseDao(Connection connection) {
         this.connection = connection;

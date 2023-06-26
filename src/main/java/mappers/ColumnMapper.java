@@ -1,11 +1,9 @@
 package mappers;
 
 import model.Column;
-import model.Table;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 public class ColumnMapper {
     public Column mapToColumn(ResultSet resultSet) throws SQLException {

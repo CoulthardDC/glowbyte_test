@@ -5,7 +5,6 @@ import db.DB;
 import exceptions.DbException;
 import mappers.ColumnMapper;
 import model.Column;
-import model.Table;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class TableColsDaoImpl implements TableColsDao {
 
-    private Connection connection;
+    private final Connection connection;
     private final ColumnMapper columnMapper = new ColumnMapper();
 
     public TableColsDaoImpl(Connection connection) {
@@ -22,8 +21,8 @@ public class TableColsDaoImpl implements TableColsDao {
 
     @Override
     public List<Column> findPkColumns() {
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
         String request = "SELECT * " +
                 "FROM table_cols AS tc " +
                 "WHERE EXISTS (SELECT * FROM table_list AS tl where tl.TABLE_NAME = tc.TABLE_NAME " +
@@ -44,8 +43,8 @@ public class TableColsDaoImpl implements TableColsDao {
 
     @Override
     public List<Column> findAll() {
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
         String request = "SELECT * FROM table_cols";
         List<Column> columns = new ArrayList<>();
         try {
@@ -61,9 +60,8 @@ public class TableColsDaoImpl implements TableColsDao {
     }
 
     @Override
-    public Long save(Column column) {
+    public void save(Column column) {
         PreparedStatement preparedStatement = null;
-        Long id = null;
         try {
             preparedStatement = connection.prepareStatement(
                     "INSERT INTO TABLE_COLS " +
@@ -76,20 +74,13 @@ public class TableColsDaoImpl implements TableColsDao {
             preparedStatement.setString(3, column.getColumnType());
             int rows = preparedStatement.executeUpdate();
 
-            if (rows > 0) {
-                ResultSet resultSet = preparedStatement.getGeneratedKeys();
-                if (resultSet.next()) {
-                    id = resultSet.getLong(1);
-                }
-                DB.closeResultSet(resultSet);
-            } else {
+            if (rows <= 0) {
                 throw new DbException("Неизвестная ошибка. Запись не добавлена");
             }
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         } finally {
             DB.closeStatement(preparedStatement);
-            return id;
         }
     }
 }
