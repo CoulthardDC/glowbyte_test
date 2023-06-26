@@ -1,0 +1,31 @@
+2023-06-25 17:35:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TABLE_LIST" not found (this database is empty); SQL statement:
+SELECT * FROM TABLE_LIST [42104-214]
+2023-06-25 17:53:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,ok VARCHAR(256) NOT NULL"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,ok VARCHAR(256) NOT NULL"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,ok VARCHAR(256) NOT NULL [42001-214]
+2023-06-25 17:54:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULL"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULL"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULL [42001-214]
+2023-06-25 17:55:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULL);"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULL);"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULL); [42001-214]
+2023-06-25 17:56:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (TABLE_NAME VARCHAR(32) NOT NULL,PK VARCHAR(256) NOT NULL);"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (TABLE_NAME VARCHAR(32) NOT NULL,PK VARCHAR(256) NOT NULL);"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (TABLE_NAME VARCHAR(32) NOT NULL,PK VARCHAR(256) NOT NULL); [42001-214]
+2023-06-25 17:57:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULLCONSTRAINT table_pk PRIMARY KEY (table_name, pk));"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULLCONSTRAINT table_pk PRIMARY KEY (table_name, pk));"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,pk VARCHAR(256) NOT NULLCONSTRAINT table_pk PRIMARY KEY (table_name, pk)); [42001-214]
+2023-06-25 17:57:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,ok VARCHAR(256) NOT NULL);"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,ok VARCHAR(256) NOT NULL);"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (table_name VARCHAR(32) NOT NULL,ok VARCHAR(256) NOT NULL); [42001-214]
+2023-06-25 17:59:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32),pk VARCHAR(256));"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE [*]IF NOT EXIST table_list (table_name VARCHAR(32),pk VARCHAR(256));"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXIST table_list (table_name VARCHAR(32),pk VARCHAR(256)); [42001-214]
